@@ -5,8 +5,8 @@
 #include <regex.h>
 #include <stdbool.h>
 
-#define MAX_MATCHES 5 // Nombre maximal de correspondances à rechercher
-#define TEXT_SIZE 152 // Taille maximale du texte d'entrée
+#define MAX_MATCHES 5 // Max num corespondences
+#define TEXT_SIZE 152 // Max len line
 #define MAX_RED 12
 #define MAX_GREEN 13
 #define MAX_BLUE 14
@@ -113,9 +113,7 @@ int main () {
         comter = 0;
         int values_green[MAX_MATCHES];
         find_values_re(line, pattern_green, &comter, values_green);
-        /* for (int i = 0; i < comter; i++) {
-            printf("red %d : %i\n", i, values_green[i]);
-        } */
+
         for (int i = 0; i < comter; i++) {
             if (values_green[i] > MAX_GREEN) {
                 cont = false;
